@@ -1,6 +1,7 @@
 # Priv-Page-2
 
 [![ISC](https://img.shields.io/badge/License-ISC-blue.svg?style=flat-square)](https://en.wikipedia.org/wiki/ISC_license)
+https://img.shields.io/github/license/StatSnips/priv-page-2
 
 Serves static sites from a `privpage2` branch, using GitHub's OAuth2.
 
