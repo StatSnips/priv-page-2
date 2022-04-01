@@ -1,6 +1,6 @@
 # Priv-Page-2
 
-![GitHub](https://img.shields.io/github/license/StatSnips/priv-page-2)
+![GitHub](https://img.shields.io/github/license/StatSnips/priv-page-2) [![CI](https://github.com/StatSnips/priv-page-2/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/StatSnips/priv-page-2/actions/workflows/ci.yml)
 
 Serves static sites from a `privpage2` branch, using GitHub's OAuth2.
 
