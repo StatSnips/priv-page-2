@@ -8,7 +8,7 @@ struct GitHub::SessionData
   end
 
   # Gets the content of a path.
-  def get_page(user_repository : PrivPage::UserRepository, path : String, response : HTTP::Server::Response) : Nil
+  def get_page(user_repository : PrivPage2::UserRepository, path : String, response : HTTP::Server::Response) : Nil
     repo_url = "/repos/#{user_repository.user}/#{user_repository.repository}"
     headers = HTTP::Headers{"authorization" => "token " + @token}
 

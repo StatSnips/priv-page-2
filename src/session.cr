@@ -1,6 +1,6 @@
 require "log"
 
-struct PrivPage::Session(T)
+struct PrivPage2::Session(T)
   def initialize(io : IO = STDERR)
     @log = Log.new("session", Log::IOBackend.new(io), :info)
   end

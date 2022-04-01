@@ -9,14 +9,14 @@ require "./github/session_data"
 # https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/
 module GitHub
   extend self
-  @@session = PrivPage::Session(SessionData).new
+  @@session = PrivPage2::Session(SessionData).new
   @@session.start_gc interval: 6.hour, max_period: 2.days
 
   def handle_request(first_subdomain_part, root_domain, context : HTTP::Server::Context)
     if first_subdomain_part == "callback"
       return handle_callback root_domain, context
     end
-    if user_repository = PrivPage::UserRepository.from_subdomain first_subdomain_part, context.response
+    if user_repository = PrivPage2::UserRepository.from_subdomain first_subdomain_part, context.response
       if session = @@session.get?(context.request.cookies["github_session"]?.try &.value)
         session.get_page user_repository, context.request.path, context.response
       else

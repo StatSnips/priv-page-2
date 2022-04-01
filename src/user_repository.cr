@@ -1,7 +1,7 @@
 require "http/server/response"
 
 # Represents an user repository transformed to a safe subdomain.
-struct PrivPage::UserRepository
+struct PrivPage2::UserRepository
   getter user : String
   getter repository : String
   getter base_branch : String?
