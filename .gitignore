@@ -1,5 +1,5 @@
 /bin
 /lib
 *.pem
-privpage
+privpage2
 .env
