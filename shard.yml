@@ -1,12 +1,12 @@
-name: privpage
+name: priv-page-2
 version: 0.1.0
 
 authors:
-  - Julien Reichardt <contact@privpage.net>
+  - Alvin G. Thomas <alvin@statsnips.com>
 
 targets:
-  privpage:
-    main: src/privpage.cr
+  privpage2:
+    main: src/privpage2.cr
 
 development_dependencies:
   ameba:
