@@ -12,7 +12,7 @@ jobs:
     container:
       image: crystallang/crystal:latest-alpine
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install Dependencies
         run: shards install
       - name: Build
@@ -21,10 +21,10 @@ jobs:
         run: |
           git config user.name CI
           git config user.email ""
-          git checkout -f --orphan privpage-${GITHUB_REF##*/}
+          git checkout -f --orphan privpage2-${GITHUB_REF##*/}
           git rm --cached -rfq .
           git clean -fxdq
           mv /docs/* .
           git add .
           git commit -qm "Update docs"
-          git push -f --set-upstream origin privpage-${GITHUB_REF##*/}
+          git push -f --set-upstream origin privpage2-${GITHUB_REF##*/}
