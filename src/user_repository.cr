@@ -9,7 +9,7 @@ struct PrivPage2::UserRepository
   # Delimiter between the user, repository and optionally, the branch.
   class_property delimiter : String = "--"
   # Base branch prefix to serve static pages.
-  class_property branch_prefix = "privpage"
+  class_property branch_prefix = "privpage2"
 
   # Full Git branch to be served.
   def full_branch : String

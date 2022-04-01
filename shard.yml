@@ -3,6 +3,7 @@ version: 0.1.0
 
 authors:
   - Alvin G. Thomas <alvin@statsnips.com>
+  - Julien Reichardt <contact@jrei.ch>
 
 targets:
   privpage2:
