@@ -12,7 +12,7 @@ This open-source project is a fork of Priv-Page by Julien Reichardt. Priv-Page w
 
 - Designed for private Github repos (only)
 - Serve by default a `privpage2` branch
-- Supports branch prefixes, `privpage2-<MY_PREFIX>`
+- Supports branch suffixes, `privpage2-<MY_SUFFIX>`
 
 ## Architecture
 
@@ -25,5 +25,7 @@ GitHub Pages allows to serve from a `/docs` directory, which is not supported by
 However, it is possible to create a branch which will have the files of the directory at the root. For a GitHub Actions example to how build a page site from a directory, [see this file](.github/workflows/documentation.yml).
 
 ## License
+
 Copyright (c) 2022 Alvin G. Thomas - ISC License
+
 Copyright (c) 2020-2021 Julien Reichardt - ISC License
