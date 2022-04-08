@@ -29,7 +29,7 @@ struct PrivPage2::UserRepository
     first_subdomain_part.split @@delimiter do |part|
       if index > 2
         response.status = HTTP::Status::BAD_REQUEST
-        response.print "Missing user part in the subdomain."
+        response.print "Subdomains incorrectly specified. See https://github.com/apps/priv-page-2"
         return
       elsif part.empty?
         response.status = HTTP::Status::FORBIDDEN
@@ -50,6 +50,7 @@ struct PrivPage2::UserRepository
       index += 1
     end
 
+    # Ensure there is at least a user and repo supplied
     if !user
       response.status = HTTP::Status::BAD_REQUEST
       response.print "Missing user part in the subdomain."

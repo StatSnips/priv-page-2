@@ -1,8 +1,7 @@
+# Core and local requirements
 require "http/client"
-
 require "./session"
 require "./user_repository"
-
 require "./github/oauth"
 require "./github/session_data"
 
@@ -13,9 +12,12 @@ module GitHub
   @@session.start_gc interval: 6.hour, max_period: 2.days
 
   def handle_request(first_subdomain_part, root_domain, context : HTTP::Server::Context)
+    # Callback as the subdomain
     if first_subdomain_part == "callback"
       return handle_callback root_domain, context
     end
+
+    # Remainder of valid requests
     if user_repository = PrivPage2::UserRepository.from_subdomain first_subdomain_part, context.response
       if session = @@session.get?(context.request.cookies["github_session"]?.try &.value)
         session.get_page user_repository, context.request.path, context.response
@@ -27,6 +29,7 @@ module GitHub
     # The response should have already been sent at this point
   end
 
+  # Callback redirects to user/repo-specific subdomain
   def handle_callback(root_domain, context : HTTP::Server::Context)
     code : String? = nil
     state : OAuth::State? = nil

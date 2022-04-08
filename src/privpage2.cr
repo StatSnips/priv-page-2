@@ -25,7 +25,7 @@ module PrivPage2
 
     # log the domain along with the path
     context.request.path = "#{host}/#{context.request.path.lchop '/'}"
-  rescue ex
+    rescue ex
     context.response.respond_with_status(:internal_server_error)
     @@log.error(exception: ex) { }
   end
